@@ -1,0 +1,19 @@
+name: Add to Org Project
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  projects: write
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1
+        with:
+          project-url: ${{ vars.ORG_PROJECT_URL_KANBAN }}
+          github-token: ${{ secrets.ORG_PROJECT_PAT }}

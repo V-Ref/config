@@ -1,0 +1,21 @@
+name: ✨ Feature
+description: 새로운 기능 제안
+labels: [feat]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 배경 / 목표
+      description: 왜 필요한가? 사용자/시나리오
+    validations:
+      required: true
+  - type: textarea
+    id: ac
+    attributes:
+      label: 수용 기준(AC)
+      description: Given-When-Then 또는 체크리스트
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: [P0-urgent, P1-high, P2-med, P3-low]
