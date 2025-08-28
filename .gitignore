@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Node
+node_modules/
+dist/
+.env
+.env.*
+yarn.lock
+package-lock.json
+
+
+# JetBrains
+.idea/
+*.iml
+
+
+# VSCode (예비용)
+.vscode/
+
+
+# Log
+*.log
+
+
+# OS
+Thumbs.db
+.DS_Store
+
+
+# Python (예비용)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# shell scripts
+*.sh~
+
+
+# Config backups
+*~
