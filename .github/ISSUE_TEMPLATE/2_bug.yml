@@ -1,0 +1,51 @@
+# .github/ISSUE_TEMPLATE/2_bug.yml
+name: 🐛 Bug
+description: 버그 또는 오류 현상 제보
+title: '[BUG] '
+labels: ['fix']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐞 버그 리포트 템플릿
+        실제로 어떤 문제가 발생했는지를 자세히 기술
+  - type: textarea
+    id: summary
+    attributes:
+      label: 버그 설명
+      description: 어떤 버그가 발생했는지 간단히 요약
+      placeholder: |
+        예: 로그인 후 페이지가 자동으로 이동하지 않음
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 절차 (Steps to Reproduce)
+      description: 어떤 상황에서 이 문제가 발생했는지 단계별로 설명
+      placeholder: |
+        1. 로그인 페이지 접속
+        2. 이메일/비밀번호 입력 후 로그인 버튼 클릭
+        3. 홈으로 이동하지 않음
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작 (Expected Behavior)
+      description: 본래 어떻게 동작해야 했는지 설명
+      placeholder: |
+        로그인 후 메인 페이지(`/home`)로 자동 이동해야 함
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - P0-urgent
+        - P1-high
+        - P2-med
+        - P3-low
+    validations:
+      required: true

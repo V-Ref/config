@@ -1,0 +1,40 @@
+# .github/ISSUE_TEMPLATE/4_test.yml
+name: 🧪 Test
+description: 테스트 코드 작성 또는 전략 개선
+title: '[TEST] '
+labels: ['test']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧪 테스트 작성 또는 개선 제안
+        유닛 테스트, 통합 테스트, E2E 테스트 등의 추가 또는 개선이 필요한 부분을 설명
+  - type: textarea
+    id: target
+    attributes:
+      label: 테스트 대상
+      description: 테스트하려는 기능, 모듈, API 등
+      placeholder: 예: 로그인 API, 게시글 목록 컴포넌트 등
+    validations:
+      required: true
+  - type: textarea
+    id: coverage
+    attributes:
+      label: 커버리지 기대
+      description: 어떤 범위를 테스트할지 설명
+      placeholder: 성공/실패 케이스, 엣지 케이스 등
+  - type: textarea
+    id: tool
+    attributes:
+      label: 테스트 도구/프레임워크
+      description: 사용할 예정인 도구가 있다면 기입
+      placeholder: 예: JUnit5, Mockito, Vitest, Cypress 등
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - P0-urgent
+        - P1-high
+        - P2-med
+        - P3-low

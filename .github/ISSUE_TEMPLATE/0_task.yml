@@ -1,0 +1,43 @@
+# .github/ISSUE_TEMPLATE/0_task.yml
+name: 📌 Task
+description: 일정 단위로 기능/버그 등을 통합하는 상위 작업
+title: '[TASK] '
+labels: ['task']
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: 목표 및 개요
+      description: 어떤 기능/작업들을 통합하는 Task인가?
+      placeholder: |
+        예: 회원가입 기능 전반을 담당하는 Task 이슈, 특정 기간의 마일스톤에 속하는 작업 등
+    validations:
+      required: true
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: 하위 이슈 또는 체크리스트
+      description: 연관된 서브 이슈를 나열하거나 체크리스트로 관리 (TODO: 추후 gitflow 추가할 것)
+      placeholder: |
+        - [ ] [feat] 이메일 인증 추가
+        - [ ] [fix] 인증 실패 시 예외 처리
+        - [ ] [test] 통합 테스트 케이스 작성
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - P0-urgent
+        - P1-high
+        - P2-med
+        - P3-low
+    validations:
+      required: true
+
+  - type: textarea
+    id: milestone
+    attributes:
+      label: 관련 마일스톤 또는 프로젝트
+      description: 이 Task가 속한 마일스톤이나 프로젝트가 있다면 작성 (선택)

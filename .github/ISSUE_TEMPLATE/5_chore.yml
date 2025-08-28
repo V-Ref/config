@@ -1,0 +1,34 @@
+# .github/ISSUE_TEMPLATE/5_chore.yml
+name: 🧹 Chore
+description: 설정, 배포, CI/CD, 종속성 등 비기능적 작업
+title: '[CHORE] '
+labels: ['chore']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧹 환경 설정 또는 기타 비기능적 작업
+        설정, 인프라, CI/CD, 배포 스크립트, 의존성 업데이트 등 유지관리 목적의 작업에 사용해주세요.
+  - type: textarea
+    id: context
+    attributes:
+      label: 작업 배경
+      description: 이 작업이 필요한 이유를 설명해주세요.
+      placeholder: 예: Storybook 버전 업그레이드 필요, GitHub Actions 트리거 수정 등
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: 작업 내용
+      description: 어떤 작업이 수행되어야 하는지 구체적으로 작성해주세요.
+      placeholder: 예: `yarn upgrade storybook`, `.github/workflows/deploy.yml` 수정 등
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - P0-urgent
+        - P1-high
+        - P2-med
+        - P3-low

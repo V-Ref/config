@@ -1,0 +1,45 @@
+name: Sync Labels (self)
+on:
+  workflow_dispatch:
+  # schedule:   # 주기적 실행 
+  #   - cron: '0 0 * * 1' # 매주 월요일
+  push:
+    branches: [ main ]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch config repo sync script and labels.json
+        run: |
+          mkdir -p repo_setup
+          curl -L -o repo_setup/sync-labels.sh \
+            https://raw.githubusercontent.com/V-Ref/config/main/repo_setup/sync-labels.sh
+          curl -L -o repo_setup/labels.json \
+            https://raw.githubusercontent.com/V-Ref/config/main/repo_setup/labels.json
+          chmod +x repo_setup/sync-labels.sh
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Sync labels against THIS repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ORG_REPO="${{ github.repository }}"
+          ORG=$(echo "$ORG_REPO" | cut -d'/' -f1)
+          REPO=$(echo "$ORG_REPO" | cut -d'/' -f2)
+
+          echo "🔁 Syncing $ORG/$REPO..."
+          repo_setup/sync-labels.sh \
+            --org "$ORG" \
+            --repos "$REPO" \
+            --file repo_setup/labels.json

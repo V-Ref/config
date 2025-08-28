@@ -1,0 +1,40 @@
+# .github/ISSUE_TEMPLATE/1_feature.yml
+name: ✨ Feature
+description: 새로운 기능 제안 또는 사용자 요구 사항 등록
+title: '[FEAT] '
+labels: ['feat']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🛠️ 기능 제안 템플릿
+        기능 또는 사용자 시나리오를 중심으로 작성
+  - type: textarea
+    id: background
+    attributes:
+      label: 배경 / 목표
+      description: 왜 이 기능이 필요한가? 사용자의 맥락 또는 문제를 설명
+      placeholder: |
+        예: 비로그인 상태에서 북마크 기능이 작동하지 않아 혼란이 발생함
+    validations:
+      required: true
+  - type: textarea
+    id: ac
+    attributes:
+      label: 수용 기준 (Acceptance Criteria)
+      description: 기능이 정상적으로 동작하는 조건을 정의, 체크리스트 또는 Given-When-Then 형식 권장
+      placeholder: |
+        - [ ] 북마크 버튼 클릭 시 로그인 유도 모달 출력
+        - [ ] 로그인 후 북마크가 정상 동작
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      description: 개발 또는 사용자 관점에서의 처리 시급성
+      options:
+        - P0-urgent
+        - P1-high
+        - P2-med
+        - P3-low
+    validations:
+      required: true
