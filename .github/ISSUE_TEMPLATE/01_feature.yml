@@ -1,5 +1,5 @@
 # .github/ISSUE_TEMPLATE/01_feature.yml
-name: ✨ Feature
+name: Feature
 description: 새로운 기능 추가 또는 기존 기능의 유의미한 개선
 title: "[FEAT] "
 labels: ["feat"]
