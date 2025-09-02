@@ -6,17 +6,16 @@ labels: ["feat"]
 body:
   - type: markdown
     attributes:
-      value: |
-        ## ✨ Feature 이슈 가이드
-        - 가급적 **사용자 스토리 + 수용 기준(AC)** 로 작성하세요.
-        - 필요하면 아래 **Subtasks**를 이슈로 변환해 **양방향 연결**(Parent Task ↔ 하위 이슈)을 유지하세요.
-
-  # 0) 상위 연결(선택)
+        value: |
+          ## ✨ Feature 이슈 가이드
+          - 가급적 **사용자 스토리 + 수용 기준(AC)** 로 작성하세요.
+          - 필요하면 아래 **Subtasks**를 이슈로 변환해 **양방향 연결**(Parent Task ↔ 하위 이슈)을 유지하세요.  # 0) 상위 연결(선택)
   - type: input
     id: parent_task
     attributes:
       label: ↗️ Parent Task (선택)
-      description: 상위 Task 이슈 번호(#42 형식). 없어도 무방
+      description: |
+        상위 Task 이슈 번호(#42 형식). 없어도 무방
       placeholder: "#42"
 
   # 1) 배경/문제
