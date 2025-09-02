@@ -1,4 +1,4 @@
-# .github/ISSUE_TEMPLATE/4_test.yml
+# .github/ISSUE_TEMPLATE/04_test.yml
 name: 🧪 Test
 description: 테스트 추가/개선(단위·슬라이스·통합·E2E·성능·보안)
 title: "[TEST] "

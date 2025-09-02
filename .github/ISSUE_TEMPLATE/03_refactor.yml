@@ -1,4 +1,4 @@
-# .github/ISSUE_TEMPLATE/3_refactor.yml
+# .github/ISSUE_TEMPLATE/03_refactor.yml
 name: ♻️ Refactor
 description: 코드 품질/구조/성능/안정성 개선 (기능 변화 최소화)
 title: "[REFACTOR] "
@@ -19,6 +19,23 @@ body:
       label: ↗️ Parent Task (선택)
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
+  - type: input
+    id: related_bug
+    attributes:
+      label: 🐛 관련 Bug 이슈 (선택)
+      description: 이 리팩토링의 계기가 된 Bug 이슈 번호(#42 형식)
+      placeholder: "#42"
+  - type: checkboxes
+    id: refactor_trigger
+    attributes:
+      label: 🎯 리팩토링 계기
+      options:
+        - label: 🐛 Bug 수정 과정에서 발견된 구조적 문제
+        - label: 📊 성능 이슈 해결 필요
+        - label: 🧪 테스트 어려움/커버리지 부족
+        - label: 🔄 코드 중복/복잡도 개선
+        - label: 📝 기술 부채 정리
+        - label: 🔧 새 요구사항 대비 구조 개선
 
   # 1) 대상/현황/문제
   - type: textarea

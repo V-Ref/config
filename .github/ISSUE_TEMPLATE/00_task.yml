@@ -1,4 +1,4 @@
-# .github/ISSUE_TEMPLATE/0_task.yml
+# .github/ISSUE_TEMPLATE/00_task.yml
 name: 📌 Task
 description: 일정 단위(스프린트/마일스톤)로 기능·버그·리팩토링·테스트·잡무(Chore)를 통합 관리하는 상위 작업
 title: "[TASK] "
