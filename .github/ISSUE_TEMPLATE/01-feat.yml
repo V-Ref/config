@@ -72,65 +72,65 @@ body:
         - DB/캐시/마이그레이션
         - 성능·보안·비용 영향
 
-  # 6) 스프린트/마일스톤
-  - type: input
-    id: milestone
+  # # 6) 스프린트/마일스톤
+  # - type: input
+  #   id: milestone
+  #   attributes:
+  #     label: 🗓️ 마일스톤/스프린트 (선택)
+  #     description: 이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
+  #     placeholder: 2025-09 Sprint 1
+  # - type: input
+  #   id: start_date
+  #   attributes:
+  #     label: 시작일(YYYY-MM-DD, 선택)
+  #     description: "날짜 형식은 YYYY-MM-DD 로 작성"
+  #     placeholder: 2025-09-01
+  # - type: input
+  #   id: due_date
+
+  #   attributes:
+  #     label: 종료일(YYYY-MM-DD, 선택)
+  #     description: "날짜 형식은 YYYY-MM-DD 로 작성"
+  #     placeholder: 2025-09-15
+
+  # 7) 우선순위/규모/도메인
+  - type: dropdown
+    id: priority
     attributes:
-      label: 🗓️ 마일스톤/스프린트 (선택)
-      description: 이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
-      placeholder: 2025-09 Sprint 1
-  - type: input
-    id: start_date
+      label: 🚦 우선순위
+      options: [P0-urgent, P1-high, P2-med, P3-low]
+  - type: dropdown
+    id: domain
     attributes:
-      label: 시작일(YYYY-MM-DD, 선택)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성"
-      placeholder: 2025-09-01
-  - type: input
-    id: due_date
+      label: 🧭 도메인(복수 선택)
+      multiple: true
+      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
 
+  # 8) 수용 기준(AC) & 완료 정의(DoD)
+  - type: textarea
+    id: acceptance_criteria
     attributes:
-      label: 종료일(YYYY-MM-DD, 선택)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성"
-      placeholder: 2025-09-15
+      label: ✅ 수용 기준(AC)
+      placeholder: |
+        - [ ] GIVEN/WHEN/THEN 형태로 테스트 가능한 문장
+        - [ ] p95 응답 < 300ms (if BE)
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: 🧾 완료 정의(DoD)
+      options:
+        - label: 테스트 통과 및 커버리지 기준 충족
+        - label: 문서/ADR/CHANGELOG 반영
+        - label: 라벨/연결(Closes/Fixes) 정리
+        - label: 관측(로그/모니터링/알람) 확인
 
-  # # 7) 우선순위/규모/도메인
-  # - type: dropdown
-  #   id: priority
-  #   attributes:
-  #     label: 🚦 우선순위
-  #     options: [P0-urgent, P1-high, P2-med, P3-low]
-  # - type: dropdown
-  #   id: domain
-  #   attributes:
-  #     label: 🧭 도메인(복수 선택)
-  #     multiple: true
-  #     options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
-
-  # # 8) 수용 기준(AC) & 완료 정의(DoD)
-  # - type: textarea
-  #   id: acceptance_criteria
-  #   attributes:
-  #     label: ✅ 수용 기준(AC)
-  #     placeholder: |
-  #       - [ ] GIVEN/WHEN/THEN 형태로 테스트 가능한 문장
-  #       - [ ] p95 응답 < 300ms (if BE)
-  # - type: checkboxes
-  #   id: dod
-  #   attributes:
-  #     label: 🧾 완료 정의(DoD)
-  #     options:
-  #       - label: 테스트 통과 및 커버리지 기준 충족
-  #       - label: 문서/ADR/CHANGELOG 반영
-  #       - label: 라벨/연결(Closes/Fixes) 정리
-  #       - label: 관측(로그/모니터링/알람) 확인
-
-  # # 9) Subtasks
-  # - type: textarea
-  #   id: subtasks
-  #   attributes:
-  #     label: 🧩 Subtasks (체크리스트 → 이슈 전환 권장)
-  #     placeholder: |
-  #       - [ ] FE: 컴포넌트/상태관리
-  #       - [ ] BE: API/스키마
-  #       - [ ] TEST: 단위/통합/E2E
-  #       - [ ] DOCS: 사용자/개발 문서
+  # 9) Subtasks
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: 🧩 Subtasks (체크리스트 → 이슈 전환 권장)
+      placeholder: |
+        - [ ] FE: 컴포넌트/상태관리
+        - [ ] BE: API/스키마
+        - [ ] TEST: 단위/통합/E2E
+        - [ ] DOCS: 사용자/개발 문서
