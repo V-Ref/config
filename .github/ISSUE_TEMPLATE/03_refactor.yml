@@ -1,4 +1,3 @@
-# .github/ISSUE_TEMPLATE/03_refactor.yml
 name: ♻️ Refactor
 description: 코드 품질/구조/성능/안정성 개선 (기능 변화 최소화)
 title: "[REFACTOR] "

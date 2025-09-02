@@ -1,4 +1,3 @@
-# .github/ISSUE_TEMPLATE/task.yml
 name: 📋 Task
 description: 스프린트/마일스톤 단위의 상위 작업 (Feature, Bug, Refactor, Test, Chore 통합 관리)
 title: "[TASK] "

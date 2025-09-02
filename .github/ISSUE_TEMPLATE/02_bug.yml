@@ -1,4 +1,3 @@
-# .github/ISSUE_TEMPLATE/02_bug.yml
 name: 🐛 Bug
 description: 버그 리포트 및 긴급 수정
 title: "[BUG] "
