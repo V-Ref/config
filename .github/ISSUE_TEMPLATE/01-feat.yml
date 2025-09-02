@@ -18,59 +18,59 @@ body:
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
 
-  # # 1) 배경/문제
-  # - type: textarea
-  #   id: context
-  #   attributes:
-  #     label: 🧩 배경·문제 정의
-  #     description: 추가하고자 하는 기능의 필요성/이유
-  #     placeholder: |
-  #       - 현재 문제/기회는?
-  #       - 왜 필요한가(비즈니스/사용자 관점)?
-  #   validations:
-  #     required: true
+  # 1) 배경/문제
+  - type: textarea
+    id: context
+    attributes:
+      label: 🧩 배경·문제 정의
+      description: 추가하고자 하는 기능의 필요성/이유
+      placeholder: |
+        - 현재 문제/기회는?
+        - 왜 필요한가(비즈니스/사용자 관점)?
+    validations:
+      required: true
 
-  # # 2) 사용자 스토리
-  # - type: textarea
-  #   id: user_story
-  #   attributes:
-  #     label: 👤 사용자 스토리
-  #     description: 추가하고자 하는 기능의 사용자 관점에서의 설명
-  #     placeholder: |
-  #       - As a <role>, I want <capability> so that <benefit>.
-  #       - 시나리오 예: GIVEN/WHEN/THEN ...
+  # 2) 사용자 스토리
+  - type: textarea
+    id: user_story
+    attributes:
+      label: 👤 사용자 스토리
+      description: 추가하고자 하는 기능의 사용자 관점에서의 설명
+      placeholder: |
+        - As a <role>, I want <capability> so that <benefit>.
+        - 시나리오 예: GIVEN/WHEN/THEN ...
 
-  # # 3) 제안/대안
-  # - type: textarea
-  #   id: proposal
-  #   attributes:
-  #     label: 💡 제안(설계 요약) & 대안
-  #     description: 추가하고자 하는 기능의 설계 요약 및 대안
-  #     placeholder: |
-  #       - 제안: ...
-  #       - 대안: ...
-  #       - 트레이드오프: ...
+  # 3) 제안/대안
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 💡 제안(설계 요약) & 대안
+      description: 추가하고자 하는 기능의 설계 요약 및 대안
+      placeholder: |
+        - 제안: ...
+        - 대안: ...
+        - 트레이드오프: ...
 
-  # # 4) UX/화면 & 접근성
-  # - type: textarea
-  #   id: ux
-  #   attributes:
-  #     label: 🖥️ UX/화면 설계 & 접근성
-  #     description: 추가하고자 하는 기능의 UX/화면 설계 및 접근성 고려사항
-  #     placeholder: |
-  #       - 와이어프레임/디자인 링크
-  #       - a11y: 키보드 내비게이션, 대비, ARIA 등
+  # 4) UX/화면 & 접근성
+  - type: textarea
+    id: ux
+    attributes:
+      label: 🖥️ UX/화면 설계 & 접근성
+      description: 추가하고자 하는 기능의 UX/화면 설계 및 접근성 고려사항
+      placeholder: |
+        - 와이어프레임/디자인 링크
+        - a11y: 키보드 내비게이션, 대비, ARIA 등
 
-  # # 5) API/데이터 영향
-  # - type: textarea
-  #   id: api_data
-  #   attributes:
-  #     label: 🔗 API/데이터 모델 영향
-  #     description: 추가하고자 하는 기능의 API/데이터 영향
-  #     placeholder: |
-  #       - API 신규/변경(엔드포인트·스키마·에러코드)
-  #       - DB/캐시/마이그레이션
-  #       - 성능·보안·비용 영향
+  # 5) API/데이터 영향
+  - type: textarea
+    id: api_data
+    attributes:
+      label: 🔗 API/데이터 모델 영향
+      description: 추가하고자 하는 기능의 API/데이터 영향
+      placeholder: |
+        - API 신규/변경(엔드포인트·스키마·에러코드)
+        - DB/캐시/마이그레이션
+        - 성능·보안·비용 영향
 
   # # 6) 스프린트/마일스톤
   # - type: input

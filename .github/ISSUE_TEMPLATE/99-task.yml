@@ -22,56 +22,56 @@ body:
     validations:
       required: true
 
-  # # 2) 범위
-  # - type: textarea
-  #   id: in_scope
-  #   attributes:
-  #     label: ✅ 범위(In Scope)
-  #     description: 이 Task에 포함되는 기능/변경사항
-  #     placeholder: |
-  #       - FE: /signup 페이지 UI, Validation, 상태관리
-  #       - BE: Signup API, 이메일 인증, Rate Limit
-  # - type: textarea
-  #   id: out_of_scope
-  #   attributes:
-  #     label: ❌ 범위 제외(Out of Scope)
-  #     description: 이번 Task에서 다루지 않을 것들(스코프 크리프 방지)
-  #     placeholder: |
-  #       - 소셜 로그인 연동(Google/Apple): 다음 스프린트로 이관
+  # 2) 범위
+  - type: textarea
+    id: in_scope
+    attributes:
+      label: ✅ 범위(In Scope)
+      description: 이 Task에 포함되는 기능/변경사항
+      placeholder: |
+        - FE: /signup 페이지 UI, Validation, 상태관리
+        - BE: Signup API, 이메일 인증, Rate Limit
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: ❌ 범위 제외(Out of Scope)
+      description: 이번 Task에서 다루지 않을 것들(스코프 크리프 방지)
+      placeholder: |
+        - 소셜 로그인 연동(Google/Apple): 다음 스프린트로 이관
 
-  # # 3) 산출물/연결 자료
-  # - type: textarea
-  #   id: artifacts
-  #   attributes:
-  #     label: 📦 산출물/아티팩트
-  #     description: |
-  #       산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
-  #     placeholder: |
-  #       - ADR: ...
-  #       - API 문서: ...
-  #       - Storybook: ...
-  #       - 배포 링크: ...
+  # 3) 산출물/연결 자료
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 📦 산출물/아티팩트
+      description: |
+        산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
+      placeholder: |
+        - ADR: ...
+        - API 문서: ...
+        - Storybook: ...
+        - 배포 링크: ...
 
-  # # 4) 스프린트/마일스톤
-  # - type: input
-  #   id: milestone
-  #   attributes:
-  #     label: 🗓️ 마일스톤/스프린트 이름
-  #     description: |
-  #       이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
-  #     placeholder: 2025-09 Sprint 1
-  # - type: input
-  #   id: start_date
-  #   attributes:
-  #     label: 시작일(YYYY-MM-DD)
-  #     description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
-  #     placeholder: 2025-09-01
-  # - type: input
-  #   id: due_date
-  #   attributes:
-  #     label: 종료일/Due(YYYY-MM-DD)
-  #     description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
-  #     placeholder: 2025-09-15
+  # 4) 스프린트/마일스톤
+  - type: input
+    id: milestone
+    attributes:
+      label: 🗓️ 마일스톤/스프린트 이름
+      description: |
+        이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
+      placeholder: 2025-09 Sprint 1
+  - type: input
+    id: start_date
+    attributes:
+      label: 시작일(YYYY-MM-DD)
+      description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
+      placeholder: 2025-09-01
+  - type: input
+    id: due_date
+    attributes:
+      label: 종료일/Due(YYYY-MM-DD)
+      description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
+      placeholder: 2025-09-15
 
   # # 5) 우선순위/규모/도메인
   # - type: dropdown
