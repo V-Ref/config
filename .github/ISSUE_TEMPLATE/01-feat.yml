@@ -1,4 +1,4 @@
-name: ✨ Feature
+﻿name: ✨ Feature
 description: 새로운 기능 추가 또는 기존 기능의 유의미한 개선
 title: "[FEAT] "
 labels: ["feat"]
@@ -83,14 +83,14 @@ body:
     id: start_date
     attributes:
       label: 시작일(YYYY-MM-DD, 선택)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성
+      description: "날짜 형식은 YYYY-MM-DD 로 작성"
       placeholder: 2025-09-01
   - type: input
     id: due_date
 
     attributes:
       label: 종료일(YYYY-MM-DD, 선택)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성
+      description: "날짜 형식은 YYYY-MM-DD 로 작성"
       placeholder: 2025-09-15
 
   # 7) 우선순위/규모/도메인
