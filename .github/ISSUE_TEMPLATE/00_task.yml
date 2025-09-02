@@ -1,5 +1,5 @@
 # .github/ISSUE_TEMPLATE/task.yml
-name: Task
+name: 📋 Task
 description: 스프린트/마일스톤 단위의 상위 작업 (Feature, Bug, Refactor, Test, Chore 통합 관리)
 title: "[TASK] "
 labels: ["task"]
@@ -17,7 +17,7 @@ body:
     id: objective
     attributes:
       label: 🎯 목표 및 개요
-      description: 이 Task의 목적과 기대효과(왜 지금 이 작업을 하나?)
+      description: Task 목적과 기대효과(왜 지금 이 작업을 하나?)
       placeholder: |
         예) 회원가입 전반(화면/검증/API/이메일 인증)을 2025-09 스프린트 내 안정화
     validations:
@@ -47,6 +47,7 @@ body:
       label: 📦 산출물/아티팩트
       description: |
         산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
+      
       placeholder: |
         - ADR: ...
         - API 문서: ...
@@ -60,6 +61,7 @@ body:
       label: 🗓️ 마일스톤/스프린트 이름
       description: |
         이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
+
       placeholder: 2025-09 Sprint 1
   - type: input
     id: start_date
@@ -79,11 +81,7 @@ body:
     id: priority
     attributes:
       label: 🚦 우선순위
-      options:
-        - P0-urgent
-        - P1-high
-        - P2-med
-        - P3-low
+      options: [P0-urgent, P1-high, P2-med, P3-low]
     validations:
       required: true
   - type: dropdown
@@ -91,10 +89,7 @@ body:
     attributes:
       label: 📏 규모(Size, 상대평가)
       description: 상대적 난이도/노력치
-      options:
-        - S
-        - M
-        - L
+      options: [S, M, L]
     validations:
       required: true
   - type: dropdown
@@ -102,16 +97,7 @@ body:
     attributes:
       label: 🧭 도메인(복수 선택 가능)
       multiple: true
-      options:
-        - frontend
-        - backend
-        - infra
-        - design
-        - docs
-        - auth
-        - explore
-        - review
-        - mypage
+      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
 
   # 6) 의존/리스크
   - type: textarea
@@ -122,6 +108,7 @@ body:
       placeholder: |
         - 선행: #123 PR 병합 필요
         - 외부: 이메일 발송 계정 승인 대기
+
   - type: checkboxes
     id: risks
     attributes:
@@ -142,6 +129,7 @@ body:
         - [ ] 비로그인 사용자가 /signup 접근 시 폼이 노출된다
         - [ ] 이메일 인증 토큰이 만료되면 재발급 안내가 노출된다
         - [ ] p95 응답시간 < 300ms (Signup API)
+
   - type: checkboxes
     id: dod
     attributes:
@@ -164,6 +152,7 @@ body:
         - [ ] FEAT: 회원가입 화면 마크업 # (필요 시 #123 형태로 연결)
         - [ ] TEST: 이메일 인증 E2E 시나리오 작성 #
         - [ ] CHORE: 이메일 발신 계정/도메인 설정 #
+
   - type: input
     id: parent
     attributes:
