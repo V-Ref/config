@@ -2,7 +2,7 @@
 name: Feature
 description: 새로운 기능 추가 또는 기존 기능의 유의미한 개선
 title: "[FEAT] "
-labels: ["feature"]
+labels: ["feat"]
 body:
   - type: markdown
     attributes:
