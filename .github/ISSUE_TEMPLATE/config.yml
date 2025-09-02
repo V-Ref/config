@@ -1,11 +1,11 @@
-# blank_issues_enabled: false
-# contact_links:
-#   - name: 📚 프로젝트 지침
-#     url: https://github.com/V-Ref/docs  # 또는 docs 레포 README
-#     about: 이슈 생성 전, 공통 규칙/DoR·DoD·라벨·브랜치 네이밍을 확인하세요.
-#   - name: 💬 Q&A / Discussion
-#     url: https://github.com/V-Ref/docs/discussions
-#     about: 질문/아이디어/의견은 Discussion에 먼저 남겨주세요.
-#   - name: 🔒 Security / 취약점 제보
-#     url: https://github.com/V-Ref/docs/security/policy
-#     about: 보안 이슈는 공개 이슈 대신 보안 정책을 통해 비공개로 제보해주세요.
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 프로젝트 지침
+    url: https://github.com/V-Ref/docs  # 또는 docs 레포 README
+    about: 이슈 생성 전, 공통 규칙/DoR·DoD·라벨·브랜치 네이밍을 확인하세요.
+  - name: 💬 Q&A / Discussion
+    url: https://github.com/V-Ref/docs/discussions
+    about: 질문/아이디어/의견은 Discussion에 먼저 남겨주세요.
+  - name: 🔒 Security / 취약점 제보
+    url: https://github.com/V-Ref/docs/security/policy
+    about: 보안 이슈는 공개 이슈 대신 보안 정책을 통해 비공개로 제보해주세요.
