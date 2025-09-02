@@ -22,144 +22,144 @@ body:
     validations:
       required: true
 
-  # 2) 범위
-  - type: textarea
-    id: in_scope
-    attributes:
-      label: ✅ 범위(In Scope)
-      description: 이 Task에 포함되는 기능/변경사항
-      placeholder: |
-        - FE: /signup 페이지 UI, Validation, 상태관리
-        - BE: Signup API, 이메일 인증, Rate Limit
-  - type: textarea
-    id: out_of_scope
-    attributes:
-      label: ❌ 범위 제외(Out of Scope)
-      description: 이번 Task에서 다루지 않을 것들(스코프 크리프 방지)
-      placeholder: |
-        - 소셜 로그인 연동(Google/Apple): 다음 스프린트로 이관
+  # # 2) 범위
+  # - type: textarea
+  #   id: in_scope
+  #   attributes:
+  #     label: ✅ 범위(In Scope)
+  #     description: 이 Task에 포함되는 기능/변경사항
+  #     placeholder: |
+  #       - FE: /signup 페이지 UI, Validation, 상태관리
+  #       - BE: Signup API, 이메일 인증, Rate Limit
+  # - type: textarea
+  #   id: out_of_scope
+  #   attributes:
+  #     label: ❌ 범위 제외(Out of Scope)
+  #     description: 이번 Task에서 다루지 않을 것들(스코프 크리프 방지)
+  #     placeholder: |
+  #       - 소셜 로그인 연동(Google/Apple): 다음 스프린트로 이관
 
-  # 3) 산출물/연결 자료
-  - type: textarea
-    id: artifacts
-    attributes:
-      label: 📦 산출물/아티팩트
-      description: |
-        산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
-      placeholder: |
-        - ADR: ...
-        - API 문서: ...
-        - Storybook: ...
-        - 배포 링크: ...
+  # # 3) 산출물/연결 자료
+  # - type: textarea
+  #   id: artifacts
+  #   attributes:
+  #     label: 📦 산출물/아티팩트
+  #     description: |
+  #       산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
+  #     placeholder: |
+  #       - ADR: ...
+  #       - API 문서: ...
+  #       - Storybook: ...
+  #       - 배포 링크: ...
 
-  # 4) 스프린트/마일스톤
-  - type: input
-    id: milestone
-    attributes:
-      label: 🗓️ 마일스톤/스프린트 이름
-      description: |
-        이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
-      placeholder: 2025-09 Sprint 1
-  - type: input
-    id: start_date
-    attributes:
-      label: 시작일(YYYY-MM-DD)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
-      placeholder: 2025-09-01
-  - type: input
-    id: due_date
-    attributes:
-      label: 종료일/Due(YYYY-MM-DD)
-      description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
-      placeholder: 2025-09-15
+  # # 4) 스프린트/마일스톤
+  # - type: input
+  #   id: milestone
+  #   attributes:
+  #     label: 🗓️ 마일스톤/스프린트 이름
+  #     description: |
+  #       이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
+  #     placeholder: 2025-09 Sprint 1
+  # - type: input
+  #   id: start_date
+  #   attributes:
+  #     label: 시작일(YYYY-MM-DD)
+  #     description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
+  #     placeholder: 2025-09-01
+  # - type: input
+  #   id: due_date
+  #   attributes:
+  #     label: 종료일/Due(YYYY-MM-DD)
+  #     description: "날짜 형식은 YYYY-MM-DD 로 작성하세요. (워크플로에서 검증/보정)"
+  #     placeholder: 2025-09-15
 
-  # 5) 우선순위/규모/도메인
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 🚦 우선순위
-      options: [P0-urgent, P1-high, P2-med, P3-low]
-    validations:
-      required: true
-  - type: dropdown
-    id: size
-    attributes:
-      label: 📏 규모(Size, 상대평가)
-      description: 상대적 난이도/노력치
-      options: [S, M, L]
-    validations:
-      required: true
-  - type: dropdown
-    id: domain
-    attributes:
-      label: 🧭 도메인(복수 선택 가능)
-      multiple: true
-      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
+  # # 5) 우선순위/규모/도메인
+  # - type: dropdown
+  #   id: priority
+  #   attributes:
+  #     label: 🚦 우선순위
+  #     options: [P0-urgent, P1-high, P2-med, P3-low]
+  #   validations:
+  #     required: true
+  # - type: dropdown
+  #   id: size
+  #   attributes:
+  #     label: 📏 규모(Size, 상대평가)
+  #     description: 상대적 난이도/노력치
+  #     options: [S, M, L]
+  #   validations:
+  #     required: true
+  # - type: dropdown
+  #   id: domain
+  #   attributes:
+  #     label: 🧭 도메인(복수 선택 가능)
+  #     multiple: true
+  #     options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
 
-  # 6) 의존/리스크
-  - type: textarea
-    id: dependencies
-    attributes:
-      label: 🔗 의존성/블로킹 이슈
-      description: 선행되어야 하거나 현재 막고 있는 이슈/PR/외부 요인
-      placeholder: |
-        - 선행: #123 PR 병합 필요
-        - 외부: 이메일 발송 계정 승인 대기
+  # # 6) 의존/리스크
+  # - type: textarea
+  #   id: dependencies
+  #   attributes:
+  #     label: 🔗 의존성/블로킹 이슈
+  #     description: 선행되어야 하거나 현재 막고 있는 이슈/PR/외부 요인
+  #     placeholder: |
+  #       - 선행: #123 PR 병합 필요
+  #       - 외부: 이메일 발송 계정 승인 대기
 
-  - type: checkboxes
-    id: risks
-    attributes:
-      label: ⚠️ 리스크/주의사항
-      options:
-        - label: 보안/권한/비용 영향 가능
-        - label: 성능/확장성 영향 가능
-        - label: 데이터 마이그레이션 필요
-        - label: 협업팀(디자인/인프라) 일정 영향
+  # - type: checkboxes
+  #   id: risks
+  #   attributes:
+  #     label: ⚠️ 리스크/주의사항
+  #     options:
+  #       - label: 보안/권한/비용 영향 가능
+  #       - label: 성능/확장성 영향 가능
+  #       - label: 데이터 마이그레이션 필요
+  #       - label: 협업팀(디자인/인프라) 일정 영향
 
-  # 7) 수용 기준(AC) & 완료 정의(DoD)
-  - type: textarea
-    id: ac
-    attributes:
-      label: ✅ 수용 기준(AC)
-      description: 기능/행동 단위로 테스트 가능한 문장으로 작성
-      placeholder: |
-        - [ ] 비로그인 사용자가 /signup 접근 시 폼이 노출된다
-        - [ ] 이메일 인증 토큰이 만료되면 재발급 안내가 노출된다
-        - [ ] p95 응답시간 < 300ms (Signup API)
+  # # 7) 수용 기준(AC) & 완료 정의(DoD)
+  # - type: textarea
+  #   id: ac
+  #   attributes:
+  #     label: ✅ 수용 기준(AC)
+  #     description: 기능/행동 단위로 테스트 가능한 문장으로 작성
+  #     placeholder: |
+  #       - [ ] 비로그인 사용자가 /signup 접근 시 폼이 노출된다
+  #       - [ ] 이메일 인증 토큰이 만료되면 재발급 안내가 노출된다
+  #       - [ ] p95 응답시간 < 300ms (Signup API)
 
-  - type: checkboxes
-    id: dod
-    attributes:
-      label: 🧾 완료 정의(DoD)
-      description: 완료 시 반드시 충족되어야 할 항목
-      options:
-        - label: 테스트 통과 및 커버리지 기준 충족
-        - label: 관련 이슈/PR 연결(Closes/Fixes) 및 라벨 정리
-        - label: 문서/ADR/CHANGELOG 업데이트
-        - label: 관측(로그/모니터링/알람) 확인
-        - label: Notion 요약/프로젝트 상태 갱신
+  # - type: checkboxes
+  #   id: dod
+  #   attributes:
+  #     label: 🧾 완료 정의(DoD)
+  #     description: 완료 시 반드시 충족되어야 할 항목
+  #     options:
+  #       - label: 테스트 통과 및 커버리지 기준 충족
+  #       - label: 관련 이슈/PR 연결(Closes/Fixes) 및 라벨 정리
+  #       - label: 문서/ADR/CHANGELOG 업데이트
+  #       - label: 관측(로그/모니터링/알람) 확인
+  #       - label: Notion 요약/프로젝트 상태 갱신
 
-  # 8) 작업 쪼개기 & 양방향 연결
-  - type: textarea
-    id: subtasks
-    attributes:
-      label: 🧩 Subtasks (체크리스트 → 이슈 연결)
-      description: 하위 작업을 체크리스트로 나열하고, 필요 시 각 항목을 별도 이슈로 생성/연결(#이슈번호). GitHub의 "Convert to issue" 기능 사용 권장.
-      placeholder: |
-        - [ ] FEAT: 회원가입 화면 마크업 # (필요 시 #123 형태로 연결)
-        - [ ] TEST: 이메일 인증 E2E 시나리오 작성 #
-        - [ ] CHORE: 이메일 발신 계정/도메인 설정 #
+  # # 8) 작업 쪼개기 & 양방향 연결
+  # - type: textarea
+  #   id: subtasks
+  #   attributes:
+  #     label: 🧩 Subtasks (체크리스트 → 이슈 연결)
+  #     description: 하위 작업을 체크리스트로 나열하고, 필요 시 각 항목을 별도 이슈로 생성/연결(#이슈번호). GitHub의 "Convert to issue" 기능 사용 권장.
+  #     placeholder: |
+  #       - [ ] FEAT: 회원가입 화면 마크업 # (필요 시 #123 형태로 연결)
+  #       - [ ] TEST: 이메일 인증 E2E 시나리오 작성 #
+  #       - [ ] CHORE: 이메일 발신 계정/도메인 설정 #
 
-  - type: input
-    id: parent
-    attributes:
-      label: ↩️ (하위 이슈에서 사용) Parent Task 번호
-      description: 이 Task를 참조하는 하위 이슈는 #번호를 입력하여 양방향 연결(예: #42)
-      placeholder: "#42"
+  # - type: input
+  #   id: parent
+  #   attributes:
+  #     label: ↩️ (하위 이슈에서 사용) Parent Task 번호
+  #     description: 이 Task를 참조하는 하위 이슈는 #번호를 입력하여 양방향 연결(예: #42)
+  #     placeholder: "#42"
   
-  # 9) 참고/메모
-  - type: textarea
-    id: notes
-    attributes:
-      label: 📝 참고 사항
-      description: 추가 메모, 스크린샷, 로그 등
+  # # 9) 참고/메모
+  # - type: textarea
+  #   id: notes
+  #   attributes:
+  #     label: 📝 참고 사항
+  #     description: 추가 메모, 스크린샷, 로그 등
