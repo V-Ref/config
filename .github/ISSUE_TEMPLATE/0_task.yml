@@ -1,33 +1,86 @@
 # .github/ISSUE_TEMPLATE/0_task.yml
 name: 📌 Task
-description: 일정 단위로 기능/버그 등을 통합하는 상위 작업
-title: '[TASK] '
-labels: ['task']
+description: 일정 단위(스프린트/마일스톤)로 기능·버그·리팩토링·테스트·잡무(Chore)를 통합 관리하는 상위 작업
+title: "[TASK] "
+labels: ["task"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📌 Task 이슈 가이드
+        - 이 Task는 특정 **마일스톤/스프린트**에 속하는 상위 작업입니다.
+        - 하위 이슈(Feature, Bug, Refactor, Test, Chore)는 아래 **Subtasks** 체크리스트로 연결하거나, 개별 이슈의 **Parent Task** 필드에 이 Task 번호를 입력해 양방향으로 연결하세요.
+        - DoR/DoD 체크리스트를 통해 시작/완료 기준을 명확히 합니다.
+
+  # 1) 배경/목표
   - type: textarea
     id: objective
     attributes:
-      label: 목표 및 개요
-      description: 어떤 기능/작업들을 통합하는 Task인가?
+      label: 🎯 목표 및 개요
+      description: 이 Task의 목적과 기대효과(왜 지금 이 작업을 하나?)
       placeholder: |
-        예: 회원가입 기능 전반을 담당하는 Task 이슈, 특정 기간의 마일스톤에 속하는 작업 등
+        예) 회원가입 전반(화면/검증/API/이메일 인증)을 2025-09 스프린트 내 안정화
     validations:
       required: true
 
+  # 2) 범위
   - type: textarea
-    id: subtasks
+    id: in_scope
     attributes:
-      label: 하위 이슈 또는 체크리스트
-      description: 연관된 서브 이슈를 나열하거나 체크리스트로 관리 (TODO: 추후 gitflow 추가할 것)
+      label: ✅ 범위(In Scope)
+      description: 이 Task에 포함되는 기능/변경사항
       placeholder: |
-        - [ ] [feat] 이메일 인증 추가
-        - [ ] [fix] 인증 실패 시 예외 처리
-        - [ ] [test] 통합 테스트 케이스 작성
+        - FE: /signup 페이지 UI, Validation, 상태관리
+        - BE: Signup API, 이메일 인증, Rate Limit
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: ❌ 범위 제외(Out of Scope)
+      description: 이번 Task에서 다루지 않을 것들(스코프 크리프 방지)
+      placeholder: |
+        - 소셜 로그인 연동(Google/Apple): 다음 스프린트로 이관
 
+  # 3) 산출물/연결 자료
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 📦 산출물/아티팩트
+      description: 산출물 유형 및 링크(예: 문서, 다이어그램, 배포 링크, Storybook, API 문서 등)
+      placeholder: |
+        - ADR: ...
+        - API 문서: ...
+        - Storybook: ...
+        - 배포 링크: ...
+
+  # 4) 스프린트/마일스톤
+  - type: input
+    id: milestone
+    attributes:
+      label: 🗓️ 마일스톤/스프린트 이름
+      description: 이름 규칙 예시: 2025-09 Sprint 1 / v0.3.0 / 2025-W36
+      placeholder: 2025-09 Sprint 1
+  - type: input
+    id: start_date
+    attributes:
+      label: 시작일(YYYY-MM-DD)
+      description: 날짜 형식을 지켜주세요(자동화에서 사용 가능)
+      placeholder: 2025-09-01
+    validations:
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+  - type: input
+    id: due_date
+    attributes:
+      label: 종료일/Due(YYYY-MM-DD)
+      description: 날짜 형식을 지켜주세요(자동화에서 사용 가능)
+      placeholder: 2025-09-15
+    validations:
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+
+  # 5) 우선순위/규모/도메인
   - type: dropdown
     id: priority
     attributes:
-      label: 우선순위
+      label: 🚦 우선순위
       options:
         - P0-urgent
         - P1-high
@@ -35,9 +88,94 @@ body:
         - P3-low
     validations:
       required: true
-
-  - type: textarea
-    id: milestone
+  - type: dropdown
+    id: size
     attributes:
-      label: 관련 마일스톤 또는 프로젝트
-      description: 이 Task가 속한 마일스톤이나 프로젝트가 있다면 작성 (선택)
+      label: 📏 규모(Size, 상대평가)
+      description: 상대적 난이도/노력치
+      options:
+        - S
+        - M
+        - L
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: 🧭 도메인(복수 선택 가능)
+      multiple: true
+      options:
+        - frontend
+        - backend
+        - infra
+        - design
+        - docs
+        - auth
+        - explore
+        - review
+        - mypage
+
+  # 6) 의존/리스크
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 🔗 의존성/블로킹 이슈
+      description: 선행되어야 하거나 현재 막고 있는 이슈/PR/외부 요인
+      placeholder: |
+        - 선행: #123 PR 병합 필요
+        - 외부: 이메일 발송 계정 승인 대기
+  - type: checkboxes
+    id: risks
+    attributes:
+      label: ⚠️ 리스크/주의사항
+      options:
+        - label: 보안/권한/비용 영향 가능
+        - label: 성능/확장성 영향 가능
+        - label: 데이터 마이그레이션 필요
+        - label: 협업팀(디자인/인프라) 일정 영향
+
+  # 7) 수용 기준(AC) & 완료 정의(DoD)
+  - type: textarea
+    id: ac
+    attributes:
+      label: ✅ 수용 기준(AC)
+      description: 기능/행동 단위로 테스트 가능한 문장으로 작성
+      placeholder: |
+        - [ ] 비로그인 사용자가 /signup 접근 시 폼이 노출된다
+        - [ ] 이메일 인증 토큰이 만료되면 재발급 안내가 노출된다
+        - [ ] p95 응답시간 < 300ms (Signup API)
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: 🧾 완료 정의(DoD)
+      description: 완료 시 반드시 충족되어야 할 항목
+      options:
+        - label: 테스트 통과 및 커버리지 기준 충족
+        - label: 관련 이슈/PR 연결(Closes/Fixes) 및 라벨 정리
+        - label: 문서/ADR/CHANGELOG 업데이트
+        - label: 관측(로그/모니터링/알람) 확인
+        - label: Notion 요약/프로젝트 상태 갱신
+
+  # 8) 작업 쪼개기 & 양방향 연결
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: 🧩 Subtasks (체크리스트 → 이슈 연결)
+      description: 하위 작업을 체크리스트로 나열하고, 필요 시 각 항목을 별도 이슈로 생성/연결(#이슈번호). GitHub의 "Convert to issue" 기능 사용 권장.
+      placeholder: |
+        - [ ] FEAT: 회원가입 화면 마크업 # (필요 시 #123 형태로 연결)
+        - [ ] TEST: 이메일 인증 E2E 시나리오 작성 #
+        - [ ] CHORE: 이메일 발신 계정/도메인 설정 #
+  - type: input
+    id: parent
+    attributes:
+      label: ↩️ (하위 이슈에서 사용) Parent Task 번호
+      description: 이 Task를 참조하는 하위 이슈는 #번호를 입력하여 양방향 연결(예: #42)
+      placeholder: "#42"
+  
+  # 9) 참고/메모
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📝 참고 사항
+      description: 추가 메모, 스크린샷, 로그 등
