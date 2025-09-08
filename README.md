@@ -1,7 +1,7 @@
 # 📖 `config` Repository
 
-V-Ref 전반 공통 규칙·자동화·SSOT(Single Source of Truth) 관리 저장소
-모든 레포는 이 저장소 정의를 기준으로 자동화 워크플로를 통해 일관성 유지
+* V-Ref 전반 공통 규칙·자동화·SSOT(Single Source of Truth) 관리 저장소
+* 모든 레포는 이 저장소 정의를 기준으로 자동화 워크플로를 통해 일관성 유지
 
 ---
 
