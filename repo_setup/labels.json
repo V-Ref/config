@@ -6,8 +6,10 @@
   {"name": "docs", "color": "0e8a16", "description": "문서"},
   {"name": "chore", "color": "d4c5f9", "description": "환경/기타"},
   {"name": "task", "color": "0075ca", "description": "작업 단위(Task 이슈)"},
-  {"name": "P0-urgent", "color": "b60205"},
-  {"name": "P1-high", "color": "d93f0b"},
-  {"name": "P2-med", "color": "fbca04"},
-  {"name": "P3-low", "color": "c2e0c6"}
+  {"name": "idea", "color": "c5def5", "description": "아이디어 제안"},
+  {"name": "bug", "color": "b60205", "description": "버그 리포트"},
+  {"name": "P0-urgent", "color": "b60205", "description": "즉시처리" },
+  {"name": "P1-high", "color": "d93f0b", "description": "높음"},
+  {"name": "P2-med", "color": "fbca04", "description": "보통" },
+  {"name": "P3-low", "color": "c2e0c6", "description": "낮음" }
 ]

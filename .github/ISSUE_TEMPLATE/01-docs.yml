@@ -1,0 +1,98 @@
+name: 📚 Docs
+description: 문서 작성/갱신/정리
+title: "[DOCS] "
+labels: ["docs"]
+type: "Docs"
+body:
+  # Header
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Docs 가이드
+        - ADR, 가이드, API 문서, ERD, 노션 요약 등 문서화 작업
+        - GitHub 원본, Notion 요약
+
+  - type: input
+    id: parent_task
+    attributes:
+      label: ↗️ 상위 Task (선택)
+      placeholder: "#42"
+
+  - type: textarea
+    id: links
+    attributes:
+      label: 🔗 관련 링크
+      placeholder: |
+        - ADR 문서
+        - 디자인/시스템 문서
+        - Notion 페이지
+
+  # Body
+  - type: input
+    id: target
+    attributes:
+      label: 🗂 대상 문서
+      placeholder: ADR/가이드/API/ERD
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 🧩 변경 이유
+      placeholder: 왜, 무엇을 갱신하는가
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: ✍️ 주요 변경 내용
+      placeholder: 목차, 섹션, 예제, 이미지
+
+  # Footer
+  - type: input
+    id: milestone
+    attributes:
+      label: 🗓️ 마일스톤/스프린트
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 🚦 Priority
+      options: [P0-urgent, P1-high, P2-med, P3-low]
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: 📏 Size
+      options: [S, M, L]
+
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: 🧾 DoD
+      options:
+        - label: 문서 머지 및 빌드 반영
+        - label: Notion 요약 갱신
+        - label: 상태/마일스톤 갱신
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: 📦 산출물
+      placeholder: |
+        - 문서 PR 링크
+        - Notion 반영 확인
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 📚 참고 자료
+      placeholder: |
+        - 스타일 가이드
+        - 레퍼런스 문서
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: 📋 Subtasks
+      placeholder: |
+        - [ ] ADR 작성
+        - [ ] API 문서 갱신

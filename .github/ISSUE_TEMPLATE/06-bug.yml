@@ -1,30 +1,33 @@
 name: 🐛 Bug
 description: 버그 리포트 및 긴급 수정
 title: "[BUG] "
-labels: ["bug"]
+labels: [ "bug" ]
+type: "Bug"
 body:
   - type: markdown
     attributes:
       value: |
         ## 🐛 Bug 리포트 가이드
-        - **현상·원인·영향**을 명확히 하고, 재현 단계와 기대 결과를 구체적으로 작성하세요.
-        - 우선순위·영향도를 고려해 Severity를 설정하고, 관련 로그/스크린샷을 첨부하세요.
-        - **근본 원인이 구조적 문제인 경우**: 임시 수정 후 별도 Refactor 이슈 생성을 고려하세요.
+        - **현상·원인·영향**을 명확히 하고, 재현 단계와 기대 결과를 구체적으로 작성
+        - 우선순위·영향도를 고려해 Severity를 설정하고, 관련 로그/스크린샷을 첨부
+        - 긴급 수정(핫픽스) 필요 시 Subtasks에 명시
+        - **원인 특정이 가능한 경우**: Fix 이슈 생성 권장
+        - **근본 원인이 구조적 문제인 경우**: 임시 수정 후 별도 Refactor 이슈 생성 고려
 
   # 0) 상위 연결(선택)
   - type: input
     id: parent_task
     attributes:
-      label: ↗️ Parent Task (선택)
+      label: ↗️ 상위 Task (선택)
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
 
   # 1) 현상·환경
   - type: textarea
-    id: description
+    id: symptom
     attributes:
       label: 🔍 현상·증상
-      description: 무엇이 어떻게 잘못되고 있는지 구체적으로 설명
+      description: 증상(실제 동작, 상태)과 기대(동작, 상태)의 차이점
       placeholder: |
         예) 로그인 후 대시보드 진입 시 빈 화면만 표시되고 데이터가 로드되지 않음
     validations:
@@ -111,28 +114,7 @@ body:
         - label: 데이터 손실/정합성 이슈
         - label: 성능 저하
         - label: 보안/권한 문제
-
-  # 6) 우선순위·도메인·일정
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 🚦 우선순위
-      options: [P0-urgent, P1-high, P2-med, P3-low]
-    validations:
-      required: true
-  - type: dropdown
-    id: domain
-    attributes:
-      label: 🧭 도메인(복수 선택)
-      multiple: true
-      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
-  - type: input
-    id: milestone
-    attributes:
-      label: 🗓️ 마일스톤/스프린트 (선택)
-      placeholder: 2025-09 Sprint 1
-
-  # 7) 임시 회피책
+  # 6) 임시 회피책
   - type: textarea
     id: workaround
     attributes:
@@ -141,18 +123,7 @@ body:
         - 페이지 새로고침하면 일시적으로 해결됨
         - 다른 브라우저 사용 시 정상 동작
 
-  # 8) 수용 기준(AC)
-  - type: textarea
-    id: acceptance_criteria
-    attributes:
-      label: ✅ 수용 기준(AC)
-      placeholder: |
-        - [ ] 재현 단계 실행 시 기대 결과대로 동작
-        - [ ] 다양한 환경(OS/브라우저)에서 정상 동작 확인
-        - [ ] 성능 회귀 없음 (p95 < 기존 기준)
-        - [ ] 관련 테스트 케이스 추가/수정
-
-  # 9) 근본 원인 & 후속 조치
+  # 7) 근본 원인 & 후속 조치
   - type: textarea
     id: suspected_cause
     attributes:
@@ -172,7 +143,39 @@ body:
         - label: 🧪 테스트 커버리지 보강 필요
         - label: 📊 모니터링/알람 개선 필요
 
-  # 10) Subtasks
+  # Footer
+  # 1) 마일스톤 / 우선순위 / 규모
+
+  - type: input
+    id: milestone
+    attributes:
+      label: 🗓️ 마일스톤/스프린트 (선택)
+      placeholder: 2025-09 Sprint 1
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 🚦 우선순위
+      options: [ P0-urgent, P1-high, P2-med, P3-low ]
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: 📏 Size
+      options: [ S, M, L ]
+
+  # 2) 수용 기준(AC)
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: ✅ 수용 기준(AC)
+      placeholder: |
+        - [ ] 재현 단계 실행 시 기대 결과대로 동작
+        - [ ] 다양한 환경(OS/브라우저)에서 정상 동작 확인
+        - [ ] 성능 회귀 없음 (p95 < 기존 기준)
+        - [ ] 관련 테스트 케이스 추가/수정
+
+  # 3) Subtasks
   - type: textarea
     id: subtasks
     attributes:
@@ -183,7 +186,7 @@ body:
         - [ ] 테스트 케이스 추가 #
         - [ ] 🔧 [선택] 구조적 개선을 위한 Refactor 이슈 생성 #
 
-  # 11) 참고
+  # 4) 참고
   - type: textarea
     id: refs
     attributes:

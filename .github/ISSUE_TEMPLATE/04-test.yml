@@ -2,20 +2,20 @@ name: 🧪 Test
 description: 테스트 추가/개선(단위·슬라이스·통합·E2E·성능·보안)
 title: "[TEST] "
 labels: ["test"]
+type: "Test"
 body:
   - type: markdown
     attributes:
       value: |
         ## 🧪 테스트 가이드
-        - **테스트 피라미드**(Unit > Integration > E2E)를 우선합니다.
-        - 재현 가능성(고정 seed/시간/랜덤)과 **플레이키(Flaky) 최소화**에 주의하세요.
-        - CI 매트릭스/커버리지 목표/관측 연계를 명확히 하세요.
+        - 재현 가능성(고정 seed/시간/랜덤), **플레이키(Flaky) 최소화**에 주의
+        - CI 매트릭스/커버리지 목표/관측 연계 명시
+        - 대상, 종류, 성공 기준 명시
 
-  # 0) 상위 연결(선택)
   - type: input
     id: parent_task
     attributes:
-      label: ↗️ Parent Task (선택)
+      label: ↗️ 상위 Task (선택)
       placeholder: "#42"
 
   # 1) 대상과 범위
@@ -88,7 +88,9 @@ body:
         - 테스트 러닝타임 예산, 타임아웃, 재시도
         - 실패 패턴 캡처(로그/스크린샷/비디오) 및 업로드
 
-  # 5) 일정/우선순위/도메인
+
+  # Footer
+  # 1) 일정/우선순위
   - type: input
     id: milestone
     attributes:
@@ -99,14 +101,8 @@ body:
     attributes:
       label: 🚦 우선순위
       options: [P0-urgent, P1-high, P2-med, P3-low]
-  - type: dropdown
-    id: domain
-    attributes:
-      label: 🧭 도메인(복수 선택)
-      multiple: true
-      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
 
-  # 6) Subtasks
+  # 2) Subtasks
   - type: textarea
     id: subtasks
     attributes:
@@ -118,7 +114,7 @@ body:
         - [ ] 성능 기준치 측정 및 알람 설정
       description: Convert to issue로 개별 이슈 생성 후 이 항목에 #번호 연결
 
-  # 7) 참고
+  # 3) 참고
   - type: textarea
     id: refs
     attributes:

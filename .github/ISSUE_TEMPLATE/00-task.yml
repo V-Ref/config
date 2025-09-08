@@ -2,21 +2,32 @@ name: 📋 Task
 description: 스프린트/마일스톤 단위의 상위 작업
 title: "[TASK] "
 labels: ["task"]
+type: "Task"
 body:
+  # Header
   - type: markdown
     attributes:
       value: |
         ## 📌 Task 이슈 가이드
-        - 이 Task는 특정 **마일스톤/스프린트**에 속하는 상위 작업입니다.
-        - 하위 이슈(Feature, Bug, Refactor, Test, Chore)는 아래 **Subtasks** 체크리스트로 연결하거나, 개별 이슈의 **Parent Task** 필드에 이 Task 번호를 입력해 양방향으로 연결하세요.
-        - DoR/DoD 체크리스트를 통해 시작/완료 기준을 명확히 합니다.
+        - 특정 **마일스톤/스프린트**의 상위 작업 정의를 위한 이슈
+        - 하위 이슈 Subtasks로 연결, **양방향 연결** 유지
+        - DoR/DoD 체크리스트를 통해 시작/완료 기준을 명시
+
+  # 0) 상위 연결(선택)
+  - type: input
+    id: parent_task
+    attributes:
+      label: ↗️ 상위 Task (선택)
+      placeholder: "#42"
+
+  # Body
 
   # 1) 배경/목표
   - type: textarea
     id: objective
     attributes:
       label: 🎯 목표 및 개요
-      description: Task 목적과 기대효과(왜 지금 이 작업을 하나?)
+      description: Task 목적, 기대효과
       placeholder: |
         예) 회원가입 전반(화면/검증/API/이메일 인증)을 2025-09 스프린트 내 안정화
     validations:
@@ -58,8 +69,8 @@ body:
     attributes:
       label: 🗓️ 마일스톤/스프린트 이름
       placeholder: 2025-09 Sprint 1
-  
-  # 5) 우선순위/규모/도메인
+
+  # 5) 우선순위/규모
   - type: dropdown
     id: priority
     attributes:
@@ -75,12 +86,6 @@ body:
       options: [S, M, L]
     validations:
       required: true
-  - type: dropdown
-    id: domain
-    attributes:
-      label: 🧭 도메인(복수 선택 가능)
-      multiple: true
-      options: [frontend, backend, infra, design, docs, auth, explore, review, mypage]
 
   # 6) 의존/리스크
   - type: textarea
@@ -102,6 +107,7 @@ body:
         - label: 데이터 마이그레이션 필요
         - label: 협업팀(디자인/인프라) 일정 영향
 
+  # Footer
   # 7) 수용 기준(AC) & 완료 정의(DoD)
   - type: textarea
     id: ac
@@ -125,27 +131,26 @@ body:
         - label: 관측(로그/모니터링/알람) 확인
         - label: Notion 요약/프로젝트 상태 갱신
 
-  # 8) 작업 쪼개기 & 양방향 연결
+  # 8) 하위 이슈 분할 & 양방향 연결
   - type: textarea
     id: subtasks
     attributes:
       label: 🧩 Subtasks (체크리스트 → 이슈 연결)
-      description: 하위 작업을 체크리스트로 나열하고, 필요 시 각 항목을 별도 이슈로 생성/연결(#이슈번호). GitHub의 "Convert to issue" 기능 사용 권장.
+      description: 하위 작업 분할, 항목 별 이슈 생성
       placeholder: |
-        - [ ] FEAT: 회원가입 화면 마크업 # (필요 시 #123 형태로 연결)
-        - [ ] TEST: 이메일 인증 E2E 시나리오 작성 #
-        - [ ] CHORE: 이메일 발신 계정/도메인 설정 #
+        - [ ] FE
+          - [ ] FEAT: 회원가입 페이지 구현 # (필요 시 #123 형태로 연결)
+        - [ ] BE
+          - [ ] FEAT: 회원가입 API 구현 #
+          - [ ] Docs: API 문서 및 Notion 정리 #
+        - [ ] Docs
+            - [ ] Docs: Notion 요약 및 프로젝트 상태 갱신 #
 
-  - type: input
-    id: parent
-    attributes:
-      label: ↩️ (하위 이슈에서 사용) Parent Task 번호
-      description: 이 Task를 참조하는 하위 이슈는 #번호를 입력하여 양방향 연결(예: #42)
-      placeholder: "#42"
-  
-  # 9) 참고/메모
+  # 9) 참고 자료
   - type: textarea
-    id: notes
+    id: references
     attributes:
-      label: 📝 참고 사항
-      description: 추가 메모, 스크린샷, 로그 등
+    label: 📚 참고 자료
+    placeholder: |
+      - RFC 7231 Hypertext Transfer Protocol
+      - Spring Boot Docs: ...

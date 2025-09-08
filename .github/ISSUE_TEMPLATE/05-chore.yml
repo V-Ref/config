@@ -2,20 +2,28 @@ name: 🔧 Chore
 description: 기능과 무관한 잡무성 작업 (설정·빌드·CI/CD·의존성·환경 등)
 title: "[CHORE] "
 labels: ["chore"]
+type: "Chore"
 body:
+  # Header
   - type: markdown
     attributes:
       value: |
         ## 🔧 Chore 가이드
-        - 코드 기능 변화 없이 프로젝트 유지/운영/환경과 관련된 작업입니다.
+        - 코드 기능 변화 없이 프로젝트 유지/운영/환경 관련 작업
         - ex) 빌드 스크립트 수정, CI/CD 구성, 의존성 업데이트, 인프라 설정
-
-  # 0) 상위 연결(선택)
   - type: input
-    id: parent_task
+    id: related
     attributes:
       label: ↗️ Parent Task (선택)
       placeholder: "#42"
+
+  # Body
+  # 0) 변경 영역
+  - type: dropdown
+    id: area
+    attributes:
+      label: 변경 영역
+      options: [빌드, CI-CD, 보안, 비용, 무영향]
 
   # 1) 작업 요약
   - type: input
@@ -47,27 +55,22 @@ body:
         - label: 비용/리소스
         - label: 협업 워크플로
 
-  # 4) 스프린트/마일스톤 (선택)
+  # Footer
+  # 1) 스프린트/마일스톤
   - type: input
     id: milestone
     attributes:
       label: 🗓️ 마일스톤/스프린트
       placeholder: 2025-09 Sprint 1
 
-  # 5) 우선순위/도메인
+  # 2) 우선순위
   - type: dropdown
     id: priority
     attributes:
       label: 🚦 우선순위
       options: [P0-urgent, P1-high, P2-med, P3-low]
-  - type: dropdown
-    id: domain
-    attributes:
-      label: 🧭 도메인
-      multiple: true
-      options: [infra, ci, build, security, docs, other]
 
-  # 6) 수용 기준(AC)
+  # 3) 수용 기준(AC)
   - type: textarea
     id: ac
     attributes:
@@ -77,7 +80,7 @@ body:
         - [ ] 보안 정책/CI 룰 충족
         - [ ] 기존 기능 동작에 영향 없음
 
-  # 7) Subtasks
+  # 4) Subtasks
   - type: textarea
     id: subtasks
     attributes:
@@ -87,7 +90,7 @@ body:
         - [ ] CI 캐시 정책 수정 #
         - [ ] 배포 알람 채널 추가 #
 
-  # 8) 참고
+  # 5) 참고
   - type: textarea
     id: refs
     attributes:
