@@ -5,7 +5,7 @@ title: "[FEAT] "
 labels: ["feat"]
 type: "Feature"
 body:
-#   Header
+  # Header
   - type: markdown
     attributes:
       value: |
@@ -15,7 +15,7 @@ body:
         - 체크리스트를 **Subtasks**를 이슈로 변환해 **양방향 연결** 유지
 
 
-#   0) 상위 연결(선택)
+  # 0) 상위 연결(선택)
   - type: input
     id: parent_task
     attributes:
@@ -23,9 +23,9 @@ body:
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
 
-
-#   Body
-#   1) 배경/문제
+  ---
+  # Body
+  # 1) 배경/문제
   - type: textarea
     id: context
     attributes:
@@ -37,7 +37,7 @@ body:
     validations:
       required: true
 
-#   2) 사용자 스토리
+  # 2) 사용자 스토리
   - type: textarea
     id: user_story
     attributes:
@@ -47,7 +47,7 @@ body:
         - As a <role>, I want <capability> so that <benefit>.
         - 시나리오 예: GIVEN/WHEN/THEN ...
 
-#   3) 제안 요약/대안
+  # 3) 제안 요약/대안
   - type: textarea
     id: proposal
     attributes:
@@ -59,7 +59,7 @@ body:
         - 근거: ...
         - 트레이드오프: ...
 
-#   4) 영향도: UX/화면 & 접근성 & API
+  # 4) 영향도: UX/화면 & 접근성 & API
   - type: textarea
     id: ux
     attributes:
@@ -72,7 +72,7 @@ body:
         - DB/캐시/마이그레이션
         - 성능·보안·비용 영향
 
-#   5) 관련 아키텍처 결정 기록(ADR)
+  # 5) 관련 아키텍처 결정 기록(ADR)
   - type: input
     id: adr
     attributes:
@@ -89,7 +89,7 @@ body:
         - [ ] GIVEN/WHEN/THEN 형태로 테스트 가능한 문장
         - [ ] p95 응답 < 300ms (if BE)
 
-
+  ---
   # Footer
   # 1) 스프린트/마일스톤
   - type: input
