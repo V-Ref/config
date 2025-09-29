@@ -5,11 +5,9 @@ title: "[FEAT] "
 labels: ["feat"]
 type: "Feature"
 body:
-
   - type: markdown
     id: guide
     attributes:
-      label: FEAT 이슈 가이드
       value: |
           ## ✨ Feature 이슈 가이드
           - **사용자 스토리 + 수용 기준(AC)** 중심으로 작성
@@ -133,7 +131,6 @@ body:
         - label: 라벨/연결(Closes/Fixes) 정리
         - label: 관측(로그/모니터링/알람) 확인
 
-  # 5) Subtasks, TODOs
   - type: textarea
     id: subtasks
     attributes:
@@ -147,7 +144,7 @@ body:
   - type: textarea
     id: references
     attributes:
-    label: 📚 참고 자료
-    placeholder: |
-      - RFC 7231 Hypertext Transfer Protocol
-      - Spring Boot Docs: ...
+      label: 📚 참고 자료
+      placeholder: |
+        - RFC 7231 Hypertext Transfer Protocol
+        - Spring Boot Docs: ...
