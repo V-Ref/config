@@ -8,7 +8,7 @@ body:
   # Header
   - type: markdown
     attributes:
-      value: |
+    value: |
         ## ✨ Feature 이슈 가이드
         - **사용자 스토리 + 수용 기준(AC)** 중심으로 작성
         - 영향도(UX, API, 데이터 모델 등) 명시, 우선순위·도메인·마일스톤 지정
@@ -23,7 +23,7 @@ body:
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
 
-  
+  ---
   # Body
   # 1) 배경/문제
   - type: textarea
@@ -88,7 +88,7 @@ body:
       placeholder: |
         - [ ] GIVEN/WHEN/THEN 형태로 테스트 가능한 문장
         - [ ] p95 응답 < 300ms (if BE)
-  
+  ---
   # Footer
   # 1) 스프린트/마일스톤
   - type: input
