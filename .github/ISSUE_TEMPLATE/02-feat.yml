@@ -23,7 +23,7 @@ body:
       description: 상위 Task 이슈 번호(#42 형식)
       placeholder: "#42"
 
----
+
 #   Body
 #   1) 배경/문제
   - type: textarea
@@ -89,7 +89,6 @@ body:
         - [ ] GIVEN/WHEN/THEN 형태로 테스트 가능한 문장
         - [ ] p95 응답 < 300ms (if BE)
 
----
 
   # Footer
   # 1) 스프린트/마일스톤
