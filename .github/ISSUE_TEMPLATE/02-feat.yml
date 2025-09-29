@@ -103,14 +103,14 @@ body:
     attributes:
       label: 🚦 우선순위
       options: [P0-urgent, P1-high, P2-med, P3-low]
-      validations: { required: true }
+    validations: { required: true }
 
   - type: dropdown
     id: size
     attributes:
       label: Size
       options: [ "S", "M", "L" ]
-      validations: { required: true }
+    validations: { required: true }
 
   # 3) 준비 정의 (DoR)
   - type: checkboxes
