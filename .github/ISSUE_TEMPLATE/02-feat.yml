@@ -9,6 +9,7 @@ body:
   - type: markdown
     id: guide
     attributes:
+      label: FEAT 이슈 가이드
       value: |
           ## ✨ Feature 이슈 가이드
           - **사용자 스토리 + 수용 기준(AC)** 중심으로 작성
