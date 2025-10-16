@@ -1,0 +1,94 @@
+name: "ADR Proposal"
+description: "ADR(Architecture Decision Record) 제안"
+title: "ADR: <주제>"
+labels:
+  - adr:proposed
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: "요약 (Summary)"
+      description: "결정 사항 한 줄 요약"
+      placeholder: "예: API 버전 관리 전략"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: storage_path
+    attributes:
+      label: "저장 위치 (Storage Path)"
+      description: "ADR 파일이 저장될 실제 디렉토리(docs/adr/ 이하)"
+      options:
+        - org (docs/adr/org/)
+        - vref-be (docs/adr/repos/vref-be/)
+        - vref-fe (docs/adr/repos/vref-fe/)
+        - vref-config (docs/adr/repos/vref-config/)
+        - vref-infra (docs/adr/repos/vref-infra/)
+        - etc (docs/adr/repos/etc/)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: "적용 범위 (Scope)"
+      description: "결정의 적용 범위"
+      options:
+        - Org
+        - Repo
+        - Infra
+        - FE
+        - BE
+        - Docs
+    validations:
+      required: true
+
+  - type: input
+    id: related
+    attributes:
+      label: "관련 레포/이슈/PR"
+      description: "본 ADR과 직접 연관된 GitHub 레포, 이슈, PR을 연결"
+      placeholder: "예: V-Ref/vref-config#12, V-Ref/vref-be#34"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context (배경/문제 정의)"
+      description: "결정의 배경, 현재 문제, 제약, 고려 사항"
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: "Decision (결정 사항)"
+      description: "채택한 대안, 그 근거를 서술"
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: "Consequences (결과/파급효과)"
+      description: "이 결정의 장점, 단점, 리스크, 트레이드오프"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives Considered (대안)"
+      description: "고려했지만 채택하지 않은 대안과 그 이유"
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: "검증/지침 연계 (Validation)"
+      description: "V-Ref 프로젝트 지침, DoR/DoD, 품질 게이트 등과의 연계"
+
+  - type: input
+    id: deciders
+    attributes:
+      label: "Deciders / Reviewers"
+      description: "의사결정에 참여하는 주체"
+      placeholder: "@username1, @username2"
